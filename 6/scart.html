@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Validation Page</title>
+  </head>
+
+  <body bgcolor="pink">
+    <br /><br /><br />
+    <script language="javascript">
+      function validate() {
+        var flag = 1;
+
+        if (document.myform.title.value == "") {
+          flag = 0;
+        }
+
+        var str = document.myform.title.value;
+
+        if (str == "c" || str == "C") {
+          // Accredited by NAAC
+          document.myform.t1.value = "C";
+          document.myform.t2.value = 444;
+        } else if (str == "jsp" || str == "JSP") {
+          document.myform.t1.value = "JSP";
+          document.myform.t2.value = 555;
+        } else {
+          flag = 0;
+        }
+
+        if (flag === 0) {
+          alert("Invalid input");
+        }
+      }
+    </script>
+
+    <form name="myform">
+      <div align="center">
+        <pre>
+            Title: <input type="text" name="title"><br>
+            <input type="button" value="Submit" onClick="validate()">
+        </pre>
+        <input type="hidden" name="t1" />
+        <input type="hidden" name="t2" />
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Validation and Form Submission</title>
+  </head>
+
+  <body bgcolor="pink">
+    <br /><br /><br />
+    <script language="javascript">
+      function validate() {
+        var flag = 1;
+
+        if (
+          document.myform.id.value == "" ||
+          document.myform.title.value == "" ||
+          document.myform.no.value == "" ||
+          document.myform.cost.value == ""
+        ) {
+          flag = 0;
+        }
+
+        var str = document.myform.title.value;
+        var str1 = document.myform.cost.value;
+
+        if (!((str === "c" && str1 == 444) || (str === "jsp" && str1 == 555))) {
+          // Accredited by NAAC
+          if (flag === 1) {
+            alert("VALID INPUT");
+            flag = 0;
+          } else {
+            alert("INVALID INPUT");
+            document.myform.focus();
+          }
+        }
+      }
+    </script>
+
+    <form name="myform" action="scart.html" target="right">
+      <div align="center">
+        <pre>
+                LOGINID :<input type="text" name="id"><br>
+                TITLE :<input type="text" name="title"><br>
+                NO.OFBOOKS :<input type="text" name="no"><br>
+                COSTOFBOOK :<input type="text" name="cost"><br>
+            </pre>
+        <br /><br />
+      </div>
+      <br /><br />
+      <div align="center">
+        <input type="button" value="Submit" onClick="validate()" />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="Clear" />
+      </div>
+    </form>
+  </body>
+</html>
